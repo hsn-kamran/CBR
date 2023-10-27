@@ -61,5 +61,5 @@ public class CurrencyCourseMonthStorage : ICurrencyCourseStorage
     }
 
     private (DateTime start, DateTime end) GetDateTimeRange() => 
-        (DateTime.Now - TimeSpan.FromDays(-30), DateTime.Now);
+        (DateTime.Now + TimeSpan.FromDays(-30), DateTime.Now);
 }
