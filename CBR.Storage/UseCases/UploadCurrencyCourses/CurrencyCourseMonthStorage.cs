@@ -60,12 +60,6 @@ public class CurrencyCourseMonthStorage : ICurrencyCourseStorage
         }        
     }
 
-    private (DateTime start, DateTime end) GetDateTimeRange()
-    {
-        if (DateTime.Now.Day <= 10)
-            return (new DateTime(DateTime.Now.Year, DateTime.Now.Month - 1, DateTime.Now.Day), DateTime.Now);
-
-
-        return (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1), DateTime.Now);
-    }
+    private (DateTime start, DateTime end) GetDateTimeRange() => 
+        (DateTime.Now - TimeSpan.FromDays(-30), DateTime.Now);
 }
