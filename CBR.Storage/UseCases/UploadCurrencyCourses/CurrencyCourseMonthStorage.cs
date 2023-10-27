@@ -2,7 +2,6 @@
 using CBR.Data;
 using CBR.Storage.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
 
 namespace CBR.Storage.UseCases.UploadCurrencyCourses;
 
@@ -63,7 +62,6 @@ public class CurrencyCourseMonthStorage : ICurrencyCourseStorage
 
     private (DateTime start, DateTime end) GetDateTimeRange()
     {
-        // TODO
         if (DateTime.Now.Day <= 10)
             return (new DateTime(DateTime.Now.Year, DateTime.Now.Month - 1, DateTime.Now.Day), DateTime.Now);
 

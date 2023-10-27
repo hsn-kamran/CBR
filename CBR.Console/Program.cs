@@ -6,6 +6,9 @@ using CBR.Storage.UseCases.UploadValutes;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+// https://dbdiagram.io/d/CBR-diagram-653ab4b6ffbf5169f08a0210
+// диаграмма таблиц бд
+
 // для решения конфликта поля DateTime с колонкой типа timestamp with timezone в Postgres
 // https://ru.stackoverflow.com/questions/1416392/Ошибка-cannot-write-datetime-with-kind-local-to-postgresql-type-timestamp-with
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -34,5 +37,3 @@ await currencyStorage.SaveToStorage(CancellationToken.None);
 await currencyCourseStorage.SaveToStorage(CancellationToken.None);
 
 Console.WriteLine("End of the work");
-
-
